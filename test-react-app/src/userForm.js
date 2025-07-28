@@ -17,7 +17,7 @@ const UserForm = (props) => {
       <Grid item xs={12}>
         <Typography component={'h1'} sx={{ color: '#000000', fontWeight: 'bold'}}>User Form</Typography>
       </Grid>
-  <Grid item xs={12}  sm={6} sx={{ display:'flex'}}>
+  <Grid item xs={12}  sm={6} sx={{ display:'flex',gap: '20px'}}>
         <Typography
           component={'label'}
           htmlFor="Name"
@@ -40,7 +40,7 @@ const UserForm = (props) => {
         />
       </Grid>
 
-      <Grid item xs={12}  sm={6} sx={{ display:'flex'}}>
+      <Grid item xs={12}  sm={6} sx={{ display:'flex', gap: '50px'}}>
         <Typography
           component={'label'}
           htmlFor="ID"

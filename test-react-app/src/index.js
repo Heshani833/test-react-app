@@ -4,14 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import UserForm from './userForm';  // Changed to uppercase
-
+import Users from './users'; //  Corrected the import to match component name
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />} />
-      <Route path="/userform" element={<UserForm />} />  {/* Changed to uppercase */}
+      <Route path="/Users" element={<Users />} />  {/* Fixed uppercase component */}
     </Routes>
   </BrowserRouter>
 );
