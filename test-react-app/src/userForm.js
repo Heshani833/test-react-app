@@ -1,7 +1,13 @@
-import React from 'react'
+import React, { use } from 'react'
 import { Grid, Input, Typography, Button } from '@mui/material'
+import { useState } from 'react';
+
 
 const UserForm = (props) => {
+
+  const [id, setId] = useState('');
+  const [name, setName] = useState('');
+
   return (
     <Grid
       container
@@ -17,7 +23,29 @@ const UserForm = (props) => {
       <Grid item xs={12}>
         <Typography component={'h1'} sx={{ color: '#000000', fontWeight: 'bold'}}>User Form</Typography>
       </Grid>
-  <Grid item xs={12}  sm={6} sx={{ display:'flex',gap: '20px'}}>
+  <Grid item xs={12}  sm={6} sx={{ display:'flex',alignItems: 'center', gap: '10px', marginBottom: '20px' }}>
+        <Typography
+          component={'label'}
+          htmlFor="ID"
+          sx={{
+            color: '#000000',
+            fontSize: '16px',
+            width: '80px',
+          }}
+        >
+          ID
+        </Typography>
+        <Input
+          type="text"
+          id="ID"
+          name="ID"
+          sx={{ flex: 1 }}
+          value={id}
+          onChange={e =>{setId(e.target.value)}}
+        />
+      </Grid>
+
+      <Grid item xs={12}  sm={6} sx={{ display:'flex', alignItems: 'center', gap: '10px' }}>
         <Typography
           component={'label'}
           htmlFor="Name"
@@ -34,32 +62,9 @@ const UserForm = (props) => {
           type="text"
           id="Name"
           name="Name"
-          sx={{ width: '10%' }}
-          value={''}
-          onChange={e =>{}}
-        />
-      </Grid>
-
-      <Grid item xs={12}  sm={6} sx={{ display:'flex', gap: '50px'}}>
-        <Typography
-          component={'label'}
-          htmlFor="ID"
-          sx={{
-            color: '#000000',
-            marginRight: '10px',
-            fontSize: '16px',
-            display: 'block',
-          }}
-        >
-          ID
-        </Typography>
-        <Input
-          type="number"
-          id="ID"
-          name="ID"
-          sx={{ width: '10%' }}
-          value={''}
-          onChange={e =>{}}
+          sx={{ flex: 1 }}
+          value={name}
+          onChange={e =>{setName(e.target.value)}}
         />
       </Grid>
       <Grid item xs={12} sx={{ display: 'block', marginTop: '20px' }}>
