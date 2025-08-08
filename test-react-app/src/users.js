@@ -2,23 +2,32 @@ import React from 'react';
 import { Box } from '@mui/material';
 import UserForm from './UserForm'; // Make sure this file exists and default-exports a component
 import UsersTable from './UsersTable';
+import Axios from 'axios';
+import { useEffect } from 'react';
+import { useState } from 'react';
 
 
-const usersData =[
-  {
-ID: 1,
-Name: 'John Doe',
-  Actions: 'Edit/Delete' // Placeholder for actions, you can replace with actual buttons later
-  },
-  {
-ID: 2,
-Name: 'Jane Smith',
-  Actions: 'Edit/Delete'
-  },
-];
+
 
 
 const Users = () => {
+
+  const [usersData, setUsersData] = useState([]);
+
+useEffect(() => {
+  getUsersData();
+}, []);
+
+
+  const getUsersData = () => {
+ Axios.get('http://localhost:3001/users')
+       .then(response => {
+        console.log(response.data.response);
+        
+  })
+}
+
+
   return (
     <Box 
       sx={{width: 'calc(100% - 100px)', margin: 'auto',marginTop: '100px'}} >  {/* you also can use Grid or react fragmentations */}
